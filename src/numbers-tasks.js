@@ -434,8 +434,11 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(value) {
+  if (Number.isFinite(value)) {
+    return true;
+  }
+  return false;
 }
 
 /**
