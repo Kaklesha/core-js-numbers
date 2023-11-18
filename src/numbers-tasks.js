@@ -513,8 +513,11 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  // throw new Error('Not implemented');
+
+  if (number > 0) return Math.floor(number);
+  return 0 - Math.ceil(Math.abs(number));
 }
 
 /**
