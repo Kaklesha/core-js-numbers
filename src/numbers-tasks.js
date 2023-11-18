@@ -546,8 +546,10 @@ function roundToLargestInteger(number) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToNearestInteger(number) {
+  if (Math.abs(Math.floor((number % 1) * 10)) >= 5)
+    return roundToLargestInteger(number);
+  return roundToSmallestInteger(number);
 }
 
 /**
