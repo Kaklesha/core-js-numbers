@@ -500,7 +500,7 @@ function getIntegerOnString(str, base) {
  * 2 ** 53  => false
  */
 function isSafeInteger(number) {
-  return number.isSafeInteger;
+  return Number.isSafeInteger(number);
 }
 
 /**
@@ -547,9 +547,7 @@ function roundToLargestInteger(number) {
  * -5.5 => -5
  */
 function roundToNearestInteger(number) {
-  if (Math.abs(Math.floor((number % 1) * 10)) >= 5)
-    return roundToLargestInteger(number);
-  return roundToSmallestInteger(number);
+  return Math.round(number);
 }
 
 /**
